@@ -7,7 +7,7 @@ export type Flatpak = {
   arch: string;
 };
 
-const updateCmd = "flatpak remote-ls --updates --app";
+const updateCmd = "flatpak remote-ls --updates";
 
 const parseFlatpakUpdates = (out: string): Flatpak[] => {
   if (out === "") return [];

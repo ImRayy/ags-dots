@@ -7,7 +7,7 @@ export const notifications = await Service.import("notifications");
 
 export const NotificationCenter = () =>
   Widget.Box({
-    css: "min-width: 20rem; min-height: 30rem; padding: 16px;",
+    css: "min-width: 20rem; min-height: 30rem; padding: 8px;",
     vertical: true,
     spacing: 8,
     children: [

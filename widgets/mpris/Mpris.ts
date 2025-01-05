@@ -4,6 +4,7 @@ import { options } from "options";
 import type { MprisPlayer } from "types/service/mpris";
 
 const Mpris = await Service.import("mpris");
+const players = Mpris.bind("players");
 
 const { fallback_img } = options.mpris;
 
@@ -28,8 +29,8 @@ export const Player = (player: MprisPlayer) => {
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
-        min-height: 96px;
-        min-width: 96px;
+        min-height: 120px;
+        min-width: 120px;
         margin-right: 8px;
       `;
     },
@@ -39,7 +40,7 @@ export const Player = (player: MprisPlayer) => {
     class_name: "title",
     hpack: "start",
     hexpand: true,
-    max_width_chars: 18,
+    max_width_chars: 24,
     truncate: "end",
     wrap: true,
     label: player.bind("track_title"),
@@ -49,7 +50,7 @@ export const Player = (player: MprisPlayer) => {
     class_name: "name",
     hpack: "start",
     hexpand: true,
-    max_width_chars: 26,
+    max_width_chars: 24,
     truncate: "end",
     wrap: true,
     label: player.bind("name").as((o) => o.toUpperCase()),
@@ -148,7 +149,7 @@ export const Player = (player: MprisPlayer) => {
   return Widget.Box({
     hexpand: true,
     name: "mpris-player",
-    css: "min-height: 92px; min-width: 18rem; padding: 5px;",
+    css: "min-width: 20rem; padding: 8px;",
     children: [
       albumArt,
       Widget.Box(
@@ -158,7 +159,11 @@ export const Player = (player: MprisPlayer) => {
         },
         Widget.Box(
           { vertical: true },
-          Widget.Box({ children: [title, playerIcon] }),
+          Widget.Box({
+            css: "padding-bottom: 4px;",
+            children: [playerName, playerIcon],
+          }),
+          title,
           artists,
         ),
         Widget.Box({ vexpand: true }),
@@ -182,58 +187,41 @@ const playerIndex = Variable(0);
 const direction = Variable(0);
 
 const playerChange = (nav: "prev" | "next") => {
-  const max = Mpris.players.length - 1;
+  const max = players.emitter.players.length - 1;
   const current = playerIndex.value;
   if (nav === "prev" && current > 0) playerIndex.setValue(current - 1);
   else if (nav === "next" && current < max) playerIndex.setValue(current + 1);
 };
 
-// export default () =>
-//   Widget.Window({
-//     name: "mpris-player-window",
-//     margins: [4],
-//     anchor: ["top"],
-//     visible: false,
-//     child:
-//  });
-
 export default () =>
-  Widget.EventBox({
-    on_scroll_up: () => playerChange("prev"),
-    on_scroll_down: () => playerChange("next"),
-    on_primary_click: () => playerChange("prev"),
-    on_secondary_click: () => playerChange("next"),
-    child: Widget.Stack({
-      css: "background-color: transparent;",
-      children: Mpris.bind("players").as((p) =>
-        Object.assign(
-          {},
-          ...p.map((player, index) => ({
-            [`child-${index}`]: Player(player),
-          })),
+  Widget.Window({
+    name: "mpris-player-window",
+    margins: [4],
+    anchor: ["top"],
+    visible: false,
+    child: Widget.EventBox({
+      on_scroll_up: () => playerChange("prev"),
+      on_scroll_down: () => playerChange("next"),
+      on_primary_click: () => playerChange("prev"),
+      on_secondary_click: () => playerChange("next"),
+      child: Widget.Stack({
+        css: "background-color: transparent;",
+        children: players.as((p) =>
+          Object.assign(
+            {},
+            ...p.map((player, index) => ({
+              [`child-${index}`]: Player(player),
+            })),
+          ),
         ),
-      ),
-      setup: (self) => {
-        playerIndex.connect("changed", ({ value }) => {
-          if (value >= direction.value) self.transition = "slide_left";
-          else if (value < direction.value) self.transition = "slide_right";
-          self.shown = `child-${value.toString()}`;
-          direction.setValue(value);
-        });
-      },
-    }),
-    setup: (self) =>
-      self.hook(Mpris, () => {
-        const players = Mpris.players;
-
-        if (players.length === 0) {
-          self.hide();
-        } else if (
-          players.filter(
-            ({ play_back_status }) => play_back_status === "Stopped",
-          ).length === 0
-        ) {
-          self.show();
-        }
+        setup: (self) => {
+          playerIndex.connect("changed", ({ value }) => {
+            if (value >= direction.value) self.transition = "slide_left";
+            else if (value < direction.value) self.transition = "slide_right";
+            self.shown = `child-${value.toString()}`;
+            direction.setValue(value);
+          });
+        },
       }),
+    }),
   });

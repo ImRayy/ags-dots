@@ -13,6 +13,7 @@ export default {
     Wallpapers(),
     NotificationPopups(),
     OSD(),
+    Mpris(),
     QuickSettings(),
     NotificationCenter(),
     Flatpak(),

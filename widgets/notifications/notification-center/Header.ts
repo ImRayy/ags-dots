@@ -1,5 +1,5 @@
-import icons from "lib/icons";
 import type { Notifications } from "types/service/notifications";
+import icons from "lib/icons";
 
 export default (notis: Notifications) => {
   const title = Widget.Label({

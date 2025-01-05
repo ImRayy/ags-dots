@@ -20,6 +20,7 @@ const css = `
     min-height: 90px;
     min-width: 90px;
     margin-right: 14px;
+    border-radius: 4px;
   `;
 
 const fetch = [

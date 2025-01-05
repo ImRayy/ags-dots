@@ -17,7 +17,7 @@ export default () =>
       Widget.Label({
         class_name: "icon",
         css: "padding-right: 3px;",
-        label: " ",
+        label: " ",
       }),
       Widget.Label({
         class_name: "value",

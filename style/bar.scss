@@ -84,11 +84,12 @@ highlight {
 
   button {
     all: unset;
-    border: 2px solid $color02;
-    min-width: 10px;
-    min-height: 10px;
-    border-radius: 10rem;
-    margin: 6px 7px;
+    background: $color01;
+    opacity: 0.2;
+    min-width: 14px;
+    margin: 9px 4px;
+    border-radius: 10px;
+    min-height: 8px;
 
     &:nth-child(1) {
       margin-left: 0;
@@ -100,15 +101,14 @@ highlight {
   }
 
   .active {
-    background: $color05;
-    border-color: $color05;
+    @include transition-color;
+    min-width: 22px;
     opacity: 1;
   }
 
   .occupied {
     opacity: 1;
-    background: $color02;
-    border-color: $color02;
+    background: $color05;
   }
 }
 

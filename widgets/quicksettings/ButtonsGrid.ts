@@ -1,8 +1,8 @@
+import { bash } from "lib/utils";
+import { nightlight } from "./nightlight";
 import { CustomButton } from "custom-widgets/CustomButton";
 import icons from "lib/icons";
-import { bash } from "lib/utils";
 import { options } from "options";
-import { nightlight } from "./nightlight";
 
 const showScreenthotOpts = Variable(false);
 const { screenshot, random_wall } = options.quicksettings;
@@ -93,8 +93,7 @@ export default () =>
             children: [
               CustomButton({
                 hexpand: true,
-                on_primary_click: () =>
-                  bash("hyprpicker | tr -d '\n' | wl-copy"),
+                on_primary_click: () => bash("hyprpicker | wl-copy"),
                 icon: icons.ui.colorpicker,
                 label: "Pick Color",
               }),

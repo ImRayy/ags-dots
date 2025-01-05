@@ -12,7 +12,7 @@ export default (notifications: Notifications) =>
       children: notifications
         .bind("notifications")
         .as((value) =>
-          value.map((noti) => Notification(noti, { config: { width: 10 } })),
+          value.map((noti) => Notification(noti, { config: { width: 18 } })),
         ),
     }),
     setup: (self) =>

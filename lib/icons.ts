@@ -14,29 +14,8 @@ export const substitutes = {
 
 export default {
   ui: {
-    close: "window-close-symbolic",
     colorpicker: "color-select-symbolic",
-    info: "info-symbolic",
-    link: "external-link-symbolic",
-    lock: "system-lock-screen-symbolic",
-    menu: "open-menu-symbolic",
-    refresh: "view-refresh-symbolic",
-    search: "system-search-symbolic",
-    settings: "emblem-system-symbolic",
-    themes: "preferences-desktop-theme-symbolic",
-    tick: "object-select-symbolic",
-    time: "hourglass-symbolic",
-    toolbars: "toolbars-symbolic",
-    warning: "dialog-warning-symbolic",
-    avatar: "avatar-default-symbolic",
-    arrow: {
-      right: "pan-end-symbolic",
-      left: "pan-start-symbolic",
-      down: "pan-down-symbolic",
-      up: "pan-up-symbolic",
-    },
   },
-
   notification: {
     default: "notifications-symbolic",
     disabled: "notifications-disabled-symbolic",
@@ -73,11 +52,5 @@ export default {
   color: {
     dark: "dark-mode-symbolic",
     light: "light-mode-symbolic",
-  },
-  powermenu: {
-    sleep: "weather-clear-night-symbolic",
-    reboot: "system-reboot-symbolic",
-    logout: "system-log-out-symbolic",
-    shutdown: "system-shutdown-symbolic",
   },
 };

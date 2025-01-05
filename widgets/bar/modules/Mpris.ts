@@ -26,6 +26,7 @@ const Player = ({
       Widget.Button({
         css: "padding-right: 2px;",
         class_name: "player-icon",
+        on_primary_click: () => App.toggleWindow("mpris-player-window"),
         child: Widget.Icon({
           icon:
             icons.mpris.playerIcons[name] ?? icons.mpris.playerIcons.default,
@@ -68,7 +69,7 @@ const Player = ({
 
   return Widget.Box({
     spacing: 6,
-    children: [icon, title, status],
+    children: [icon, artist, title, status],
   });
 };
 
@@ -92,6 +93,7 @@ export default () =>
       self.class_name = player.play_back_status.toLowerCase();
 
       const { name, track_artists, track_title, play_back_status } = player;
+
       if (play_back_status !== "Stopped") {
         self.child = Player({
           name: name,
@@ -105,12 +107,4 @@ export default () =>
         });
       }
     }),
-    setup: (self) =>
-      self.hook(mpris, () => {
-        if (mpris.players.length === 0) {
-          self.hide();
-        } else {
-          self.show();
-        }
-      }),
   });

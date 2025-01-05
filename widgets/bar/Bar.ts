@@ -1,9 +1,10 @@
+import ClientTitle from "./modules/ClientTitle.ts";
 import Clock from "./modules/Clock.ts";
 import FlatpakUpdatesCount from "./modules/FlatpakUpdatesCount";
 import Mpris from "./modules/Mpris.ts";
 import { NetworkIndicator } from "./modules/Network.ts";
 import NotifyIcon from "./modules/NotifyIcon";
-import OsIcon from "./modules/OsIcon";
+import OsIcon from "./modules/OsIcon.ts";
 import Separator from "./modules/Separator";
 import { CpuUsage, MemoryUsage } from "./modules/SysMonitor.ts";
 import SysTray from "./modules/SysTray.ts";
@@ -23,6 +24,7 @@ const Left = () =>
       Separator(),
       MemoryUsage(),
       FlatpakUpdatesCount(),
+      ClientTitle(),
     ],
   });
 

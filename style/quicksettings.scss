@@ -1,19 +1,15 @@
 #quicksettings {
   .control-pannel {
     background: $base;
-    border: 1px solid;
-    border-radius: $rounded-lg;
+    border: 3px solid $color03;
     padding: 8px;
     // border-radius: $border-radius;
   }
 
   #mpris-player {
     border: $border;
-    border-radius: $border-radius;
-
-    .album-art {
-      border-radius: $border-radius;
-    }
+    // border-radius: $border-radius;
+    border-color: $color05;
 
     trough {
       background-color: rgba($color01, 0.1);
@@ -22,34 +18,30 @@
 
   .buttons-grid {
     button {
-      border-radius: $rounded-lg;
-      background-color: transparentize($color00, 0.3);
+      background-color: $color00;
       min-height: 38px;
-      min-width: 8rem;
+      min-width: 8.3rem;
       color: $color01;
 
       &:hover {
         transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
         transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
         transition-duration: 300ms;
-        background-color: $color00;
+        background-color: $color05;
+        color: $color00;
       }
     }
 
     .active {
       background-color: $color03;
       color: $color00;
-
-      &:hover {
-        background: $color03;
-        color: $color00
-      }
     }
   }
 
   .sysfetch {
-    background: $bg-alt;
-    border-radius: $border-radius;
+    border: $border;
+    // border-radius: $border-radius;
+    border-color: $color06;
     padding: 8px;
     color: $color01;
 
@@ -77,28 +69,4 @@
       color: $color10;
     }
   }
-
-  .profile {
-    .buttons-container {
-      button {
-        // all: unset;
-        background: $color00;
-        color: $color01;
-        min-height: 26px;
-
-        &:hover {
-          background: transparentize($color01, 0.8);
-        }
-      }
-    }
-
-    .options {
-      background: $bg-alt;
-    }
-
-    .day-progress {
-      color: $color01;
-    }
-  }
-
 }
