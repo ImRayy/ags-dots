@@ -1,0 +1,170 @@
+@import "./mixines/transition.scss";
+
+.notification {
+  background-color: $base;
+  border: 2px solid $color01;
+  padding: 6px;
+  margin-bottom: 6px;
+  border-radius: $rounded-lg;
+
+  separator {
+    margin: 4px 0px;
+    background-color: transparentize($color01 , 0.8);
+  }
+
+  .title {
+    font-size: 12.5px;
+  }
+
+  .description {
+    font-size: 12px;
+    font-weight: 400;
+    margin-top: 2px;
+  }
+
+  .icon {
+    color: $color00;
+
+    .img {
+      margin-right: 10px;
+    }
+  }
+
+  .time {
+    color: $color03;
+    margin-right: 10px;
+    border-radius: 10rem;
+  }
+
+  .close-button {
+    &:hover {
+      image {
+        color: $color04;
+      }
+    }
+
+  }
+
+  .action-buttons button {
+    background: $color00;
+    color: $color01;
+
+    &:hover {
+      background: $color01;
+      color: $color00;
+    }
+  }
+
+  .app-name {
+    opacity: 0.5;
+    font-size: 12px;
+  }
+
+}
+
+
+.notification.critical {
+  border: 2px solid $color04;
+}
+
+window#notifications {
+  all: unset;
+  background-color: transparent;
+  font-size: 14px;
+
+  .notifications {
+    margin: 4.8px;
+  }
+}
+
+
+#notification-center {
+  background-color: $base;
+  color: $color01;
+  border: $border;
+  border-radius: $rounded-lg;
+
+  .notifications-fallback {
+    background: transparent;
+    border-radius: $border-radius;
+
+    label,
+    image {
+      color: transparentize($color01, 0.6);
+    }
+  }
+
+
+  .notification {
+    background-color: $color00;
+    border: none;
+    border-radius: $border-radius;
+
+    .notification-image {
+      border-radius: $border-radius;
+    }
+
+
+    .action-buttons button {
+      background: $base;
+
+      &:hover {
+        background: $color01;
+        color: $color00
+      }
+    }
+  }
+
+  .notification.critical {
+    border: 2px solid $color04;
+  }
+
+
+  .notifications-header {
+    padding: 4px;
+    border-radius: $border-radius;
+
+    separator {
+      background-color: $color07;
+      margin: 6px 0;
+      margin-right: 4px;
+      min-width: 3px;
+      border-radius: 1rem;
+    }
+
+    label {
+      font-size: 15px;
+    }
+
+    .notifications-disabled {
+      background-color: $color05;
+
+      image {
+        color: $color00;
+      }
+    }
+
+
+    button {
+      background-color: $color00;
+      color: $color01;
+      border-radius: 1rem;
+      padding: 6px;
+      min-width: 20px;
+      min-height: 20px;
+
+      &:hover {
+        @include transition-color;
+        background-color: $color03;
+
+        image {
+          color: $color00;
+        }
+      }
+    }
+  }
+
+  .notification-content {
+    padding-top: 3px;
+  }
+}

@@ -1,0 +1,6 @@
+{
+    "name": "astal-shell",
+    "dependencies": {
+        "astal": "/home/ray/.local/share/ags"
+    }
+}

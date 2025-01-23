@@ -36,7 +36,13 @@
       },
       "nursery": {
         "useSortedClasses": "error"
-      }
+      },
+      "a11y": {
+        "useButtonType": "off",
+        "noLabelWithoutControl": "off",
+        "useKeyWithClickEvents": "off"
+      },
+      "correctness": { "useJsxKeyInIterable": "off" }
     }
   },
   "javascript": {

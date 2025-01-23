@@ -1,0 +1,53 @@
+@import "./mixines/button.scss";
+
+#flatpak-updates {
+  background-color: $base;
+  border: 1px solid;
+  border-radius: $rounded-lg;
+  ;
+
+  .update-list {
+    background-color: $bg-alt;
+    padding: 4px;
+    border-radius: $border-radius;
+  }
+
+
+  .update-item {
+    background: inherit;
+    padding: 4px 0 4px 4px;
+    color: $text-dimmed;
+
+    .update-icon {
+      color: $color05;
+      font-size: 18px;
+    }
+
+    &:hover {
+      background-color: $color00;
+    }
+
+  }
+
+  .name {
+    color: $color01;
+  }
+
+  .action-buttons {
+    button {
+      @include button;
+      min-height: 32px;
+      padding: 0 12px 0 12px;
+    }
+
+    &.update {
+      background: $color03;
+      color: $base;
+    }
+
+    &.cancel:hover {
+      background: $color04;
+    }
+  }
+
+}

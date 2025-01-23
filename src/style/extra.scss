@@ -1,0 +1,62 @@
+$border: 2px solid transparentize($color01, 0.9);
+$border-radius: 5px;
+$rounded-lg: 10px;
+$rounded-md: 8px;
+
+window.popup {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+
+  menu {
+    background-color: $base;
+    color: transparentize($color01, 0.8);
+    border: $border;
+    border-color: $color03;
+    border-radius: $border-radius;
+
+    separator {
+      background-color: $color00;
+    }
+
+    menuitem {
+      color: transparentize($color01, 0.3);
+      margin-bottom: 4px;
+      padding: 8px 6px;
+      padding-left: 0;
+
+      &:hover {
+        color: $color01;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+
+
+separator {
+  background-color: transparent;
+}
+
+.fallback {
+  color: $text-dimmed;
+}
+
+
+scrollable {
+  viewport {
+    border: none;
+  }
+}
+
+#alert {
+  background: transparent;
+
+  &>eventbox {
+    background-color: transparentize($base, 0.6);
+  }
+}

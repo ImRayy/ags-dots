@@ -1,0 +1,64 @@
+#wall-picker {
+  background: transparentize($base, 0.6);
+
+  &>box {
+    background: $base;
+  }
+
+  border-top: 2px solid $color00;
+
+  .image {
+    transition-property: all;
+    transition-duration: 300ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 2px;
+  }
+
+  separator {
+    background-color: $color00;
+  }
+
+  .title {
+    color: $color01;
+    font-size: 15px;
+  }
+
+  #fallback {
+    font-size: 100px;
+  }
+
+  #header {
+    separator {
+      background-color: $color03;
+      margin: 6px 0;
+      margin-right: 4px;
+      min-width: 3px;
+      border-radius: 1rem
+    }
+  }
+
+  button {
+    min-height: 2rem;
+    padding: 0 20px;
+
+    &.add-walls-btn {
+      background-color: $color03;
+      color: $base;
+
+      &:hover {
+        background-color: $color05 ;
+      }
+    }
+
+    &.close-btn {
+      background-color: $color00;
+      color: $color01;
+
+      &:hover {
+        background-color: $color01 ;
+        color: $base;
+      }
+    }
+  }
+
+}

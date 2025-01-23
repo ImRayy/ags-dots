@@ -1,0 +1,223 @@
+@import "./mixines/transition.scss";
+
+$accent: transparentize($color00, 0.3);
+
+window {
+  background-color: $base;
+  color: $color00;
+}
+
+.bar {
+  padding: 4px 6px;
+}
+
+button {
+  padding: 1px 10px;
+  color: white;
+  border: none;
+  box-shadow: none;
+  background: $base;
+  min-width: 0;
+
+  &:active {
+    color: $color02;
+  }
+
+  &:hover {
+    color: $color07;
+  }
+}
+
+
+progress,
+highlight {
+  min-height: 8px;
+}
+
+.qs-button {
+  @include transition-color;
+  all: unset;
+  color: $color01;
+  background: $accent;
+  padding: 0px 10px;
+  border-radius: $rounded-md;
+
+  label {
+    font-size: $font-size;
+  }
+
+  &:hover {
+    background: $color03;
+    color: $color00;
+  }
+}
+
+.separator {
+  color: $color01;
+  opacity: 0.2;
+}
+
+.cpu-usage,
+.memory-usage,
+.client-title,
+.audio,
+.clock {
+  .value {
+    padding: 0px 10px;
+    padding-left: 0px;
+    border-radius: 0px $rounded-md $rounded-md 0;
+    background: $accent;
+    color: $color01;
+  }
+
+  .icon {
+    border-radius: $rounded-md 0 0 $rounded-md;
+    background: $accent;
+    padding-left: 10px;
+    color: $color01;
+  }
+}
+
+.flatpak-updates-count {
+  @include transition-color;
+  all: unset;
+  background: $accent;
+  border-radius: $rounded-md;
+  color: $color01;
+  padding: 0 10px;
+
+  &:hover {
+    background: $color03;
+    color: $base;
+  }
+}
+
+.workspaces {
+  background: $accent;
+  padding: 0 10px;
+  border-radius: $rounded-md;
+
+  button {
+    all: unset;
+    border: 2px solid $color02;
+    min-width: 10px;
+    min-height: 10px;
+    border-radius: 10rem;
+    margin: 6px 7px;
+
+    &:nth-child(1) {
+      margin-left: 0;
+    }
+
+    &:nth-last-child(1) {
+      margin-right: 0;
+    }
+  }
+
+  .focused {
+    background: $color05;
+    border-color: $color05;
+    opacity: 1;
+  }
+
+  .occupied {
+    background: $color02;
+    border-color: $color02;
+    opacity: 1;
+  }
+}
+
+
+.media button {
+  color: $color01;
+  border-radius: $rounded-md;
+  padding: 0 10px;
+  background: $accent;
+
+  &:hover {
+    color: $color00;
+    background: $color03;
+  }
+
+  &.paused {
+    color: $color00;
+    background: $color07;
+  }
+}
+
+.systray {
+  background: $color00;
+  border-radius: $rounded-md;
+
+  button {
+    all: unset
+  }
+
+  image {
+    font-size: 14px;
+  }
+
+  .systray-icon.custom {
+    font-size: 18px;
+  }
+}
+
+.network-indicator {
+  color: $color01;
+  border-radius: $rounded-md;
+  background: $accent;
+  padding: 0px 10px;
+}
+
+label {
+  font-weight: bold;
+}
+
+.powermenu-icon {
+  font-size: 16px;
+  color: $color04;
+  padding-right: 6px;
+}
+
+.quickaccess-buttons {
+  background: $accent;
+  padding-left: 10px;
+  padding-right: 16px;
+  border-radius: $rounded-md ;
+
+  button {
+    all: unset;
+    color: $color01;
+
+    &:hover {
+      color: $color03;
+    }
+  }
+}
+
+.notify-icon {
+  all: unset;
+  @include transition-color;
+  color: $color01;
+  background: $accent;
+  padding: 0 $rounded-md;
+  border-radius: $rounded-md;
+
+  &:hover {
+    background: $color03;
+    color: $color00;
+  }
+
+  image {
+    font-size: $font-size;
+  }
+
+  &.has-notifications {
+    color: $color04;
+
+    &:hover {
+      background: $color04;
+      color: $color00;
+    }
+  }
+}

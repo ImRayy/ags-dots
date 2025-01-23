@@ -1,0 +1,162 @@
+#quicksettings {
+  .control-pannel {
+    background: $base;
+    border: $border;
+    border-radius: $rounded-lg;
+  }
+
+  #mpris-player {
+    border: $border;
+    border-radius: $rounded-lg;
+
+    .album-art {
+      border-radius: $border-radius;
+    }
+
+    trough {
+      background-color: rgba($color01, 0.1);
+    }
+  }
+
+  .qs-buttons {
+    button {
+      border-radius: $rounded-lg;
+      background-color: transparentize($color00, 0.3);
+      min-height: 38px;
+      min-width: 8rem;
+      color: $color01;
+
+      &:hover {
+        transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 300ms;
+        background-color: $color00;
+      }
+    }
+
+    .recording {
+      background: $color04;
+
+      &:hover {
+        background: $color04;
+      }
+    }
+
+    .active {
+      background-color: $color03;
+      color: $color00;
+
+      &:hover {
+        background: $color03;
+        color: $color00
+      }
+    }
+  }
+
+  .sysfetch {
+    background: $bg-alt;
+    border-radius: $border-radius;
+    padding: 8px;
+    color: $color01;
+
+    .icon {
+      padding-right: 2px;
+    }
+
+    .user .icon {
+      color: $color07;
+    }
+
+    .host .icon {
+      color: $color06;
+    }
+
+    .distro .icon {
+      color: $color05;
+    }
+
+    .kernel .icon {
+      color: $color11;
+    }
+
+    .uptime .icon {
+      color: $color10;
+    }
+  }
+
+  .profile {
+    .buttons-container {
+      button {
+        background: $color00;
+        color: $color01;
+        min-height: 26px;
+
+        &:hover {
+          background: transparentize($color01, 0.8);
+        }
+      }
+    }
+
+    .options {
+      background: $bg-alt;
+    }
+
+    .day-progress {
+      background: $color00;
+      padding: 6px;
+      border-radius: 6px;
+      color: $color01;
+    }
+
+    levelbar trough block.empty {
+      background: transparentize($color01, 0.8)
+    }
+  }
+
+}
+
+.calendar {
+
+  .container {
+    background: $color00;
+    border: 2px solid $bg-alt;
+    border-radius: 8px;
+  }
+
+  .date-widget {
+    label {
+      color: $color01;
+    }
+
+    .separator {
+      color: $color06;
+    }
+  }
+
+  calendar {
+    all: unset;
+    color: $color01;
+    font-size: 14px;
+    padding-top: 4px;
+
+
+    &.header {
+      border: none;
+    }
+
+    &.highlight {
+      background-color: transparent;
+      color: $color05;
+    }
+
+    &:selected {
+      background: transparent;
+      border-radius: 8px;
+      color: $color04;
+    }
+
+    &:indeterminate {
+      color: transparentize($color01, 0.6);
+    }
+  }
+}

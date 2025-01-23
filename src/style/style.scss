@@ -1,0 +1,20 @@
+@import "/home/ray/.config/stylix/ags-colors.scss";
+// @import "./colors.scss";
+
+$font-size: 14px;
+
+* {
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: $font-size;
+}
+
+@import "./global.scss";
+@import "./extra.scss";
+@import "./bar.scss";
+@import "./notifications.scss";
+@import "./osd.scss";
+@import "./mpris.scss";
+@import "./quicksettings.scss";
+@import "./flatpak.scss";
+@import "./wall-picker.scss";
+@import "./dialog.scss"

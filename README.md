@@ -1,5 +1,5 @@
 > [!NOTE]
-> AGS V1 is no longer actively maintained. If you install AGS from any package manager, it will default to V2, which is a Scaffolding CLI for Astal+TypeScript. My configuration is based on V1. Since the two versions differ significantly, my config will not work with the latest AGS. To install AGS V1, follow [these instructions](https://github.com/ImRayy/ags-dots/issues/3#issuecomment-2563322949)
+> Legacy v1 config remains available on [ags-v1 branch](https://github.com/ImRayy/ags-dots/tree/ags-v1)
 ---
 
 ![banner](https://ik.imagekit.io/rayshold/dotfiles/hyprland-gruvbox-02.png?updatedAt=1736180697858)
@@ -44,6 +44,7 @@
 - `libgtop` - resource usage
 - `networkmanager`
 - `hyprshade`, `hyprpicker` - nightlight & colorpicker
+- `wf-recorder` - screen recorder
 - `swww` - wallpaper-picker & other related stuff
 - `imagemagick` - for compressing images
 - `flatpak` - flatpak update widget

@@ -1,0 +1,53 @@
+@import "./mixines/transition.scss";
+
+#mpris-player {
+  color: $color09;
+
+  button {
+    all: unset;
+    color: $color09;
+  }
+
+  .title {
+    font-size: 13px;
+    padding-bottom: 1px;
+  }
+
+  .artists {
+    font-size: 12px;
+    color: $color05
+  }
+
+  .name {
+    color: $color03;
+  }
+
+  .player-name {
+    color: $color02;
+  }
+
+  .playback-controls {
+    button {
+      @include transition-color;
+      background-color: $color00;
+      padding: 6px;
+      border-radius: 4px;
+
+      &:hover {
+        color: $base;
+        background-color: $color03;
+      }
+    }
+
+  }
+
+  .position,
+  .length {
+    font-size: 12px;
+  }
+}
+
+#mpris-player-window {
+  background-color: $crust;
+  border: 3px solid $color01;
+}
