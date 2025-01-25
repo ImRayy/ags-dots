@@ -19,15 +19,29 @@
     font-size: 20px;
   }
 
-  trough {
-    border-radius: 6px;
-    margin-top: 14px;
-    margin-bottom: 10px;
-
-    progress,
-    highlight {
-      min-width: 30px;
+  levelbar {
+    trough {
       border-radius: 6px;
+      margin-top: 10px;
+      margin-bottom: 16px;
+
+      .filled.low {
+        background-color: $color05;
+      }
+
+      .filled.high {
+        background-color: $color03;
+      }
+
+      .filled.full {
+        background-color: $color04;
+      }
+
+      progress,
+      highlight {
+        min-width: 30px;
+        border-radius: 6px;
+      }
     }
   }
 }

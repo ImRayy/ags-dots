@@ -9,6 +9,7 @@ import {
   NotificationCenter,
   NotificationPopups,
 } from "./src/widgets/notifications";
+import OSD from "./src/widgets/osd";
 import QuickSettings from "./src/widgets/quick-settings";
 import WallPicker from "./src/widgets/wall-picker";
 
@@ -40,11 +41,12 @@ App.start({
   css: css,
   main() {
     App.get_monitors().map(Bar);
-    QuickSettings();
-    NotificationPopups();
-    NotificationCenter();
-    WallPicker();
-    Flatpak();
     Alert();
+    Flatpak();
+    NotificationCenter();
+    NotificationPopups();
+    OSD();
+    QuickSettings();
+    WallPicker();
   },
 });
