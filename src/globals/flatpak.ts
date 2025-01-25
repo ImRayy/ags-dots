@@ -1,5 +1,5 @@
-import { execAsync } from "astal";
 import Variable from "astal/variable";
+import { bash } from "~/lib/utils";
 
 export type Flatpak = {
   id: string;
@@ -50,6 +50,6 @@ export const flatpakUpdates = Variable([] as Flatpak[]).poll(
 );
 
 export const refetchFlatpakUpdates = () =>
-  execAsync(showUpdatesCmd).then((out) =>
+  bash(showUpdatesCmd).then((out) =>
     flatpakUpdates.set(parseFlatpakUpdates(out)),
   );

@@ -1,12 +1,13 @@
 import { exec } from "astal";
 
-const home = `/home/${exec("whoami")}`;
+export const home = `/home/${exec("whoami")}`;
 
 export const options = {
   terminal: "kitty",
   notification_timeout: 5000,
   quicksettings: {
     profile_picture: `${home}/.profile.png`,
+    recording_path: `${home}/Video`,
     screenshot: {
       path: `${home}/Pictures/screenshots`,
     },
@@ -15,7 +16,7 @@ export const options = {
     },
   },
   mpris: {
-    fallback_img: "/home/ray/.config/ags/lib/fallback.svg",
+    fallback_img: "./lib/fallback.svg",
   },
   wallpaper_picker: {
     path: `${home}/.config/swww/compressed-walls`,

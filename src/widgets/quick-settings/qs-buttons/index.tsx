@@ -1,10 +1,11 @@
 import { Variable, bind, exec, execAsync } from "astal";
 import icons from "~/lib/icons";
-import { options } from "~/options";
+import { bash } from "~/lib/utils";
+import { home, options } from "~/options";
 import { sysTime } from "~/src/globals/sys-time";
 import Button from "./button";
 
-const { random_wall } = options.quicksettings;
+const { random_wall, recording_path } = options.quicksettings;
 
 const ToggleDarkMode = () => {
   const nightLight = Variable(
@@ -18,9 +19,9 @@ const ToggleDarkMode = () => {
       )}
       onClick={() => {
         if (nightLight.get() === "blue-light-filter") {
-          execAsync("hyprshade off").then(() => nightLight.set(null));
+          bash("hyprshade off").then(() => nightLight.set(null));
         } else {
-          execAsync("hyprshade on blue-light-filter").then(() =>
+          bash("hyprshade on blue-light-filter").then(() =>
             nightLight.set("blue-light-filter"),
           );
         }
@@ -32,24 +33,31 @@ const ToggleDarkMode = () => {
 };
 
 const ScreenRecord = () => {
-  const format = `recording_${sysTime.get().format("%Y-%m-%d_%H-%M-%S")}.mp4`;
+  const format = bind(sysTime).as(
+    (d) => `recording_${d.format("%Y-%m-%d_%H-%M-%S")}.mp4`,
+  );
   const isRecording = Variable(false);
   const className = bind(isRecording).as((r) => (r ? "recording" : ""));
   const icon = bind(isRecording).as((r) => (r ? "" : ""));
   const label = bind(isRecording).as((r) => (r ? "Stop" : "Screen Rec"));
 
-  execAsync("pgrep wf-recorder").then(() => isRecording.set(true));
+  // Why not simply use `pgrep wf-recorder` & be done with comparing string?
+  // Well this `Gio.IOErrorEnum: pgrep: no matching criteria specified`
+  // fucker showing up in console, which looks ugly
+  bash("pgrep wf-recorder > /dev/null && echo true || echo false").then(
+    (out) => out === "true" && isRecording.set(true),
+  );
 
   const recordHandler = () => {
-    const cmd = `wf-recorder --audio --file="/home/ray/${format}"`;
+    const cmd = `wf-recorder --audio --file="${recording_path}/${format.get()}"`;
 
     if (!isRecording.get()) {
       isRecording.set(true);
-      execAsync(cmd);
+      bash(cmd);
     } else {
-      execAsync("pkill wf-recorder").then(() => {
+      bash("pkill wf-recorder").then(() => {
         isRecording.set(false);
-        execAsync(`notify-send "${format} Saved"`);
+        bash(`notify-send "Recording Saved at ${recording_path}"`);
       });
     }
   };

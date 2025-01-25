@@ -67,7 +67,7 @@ export default {
       chromium: "com.google.Chrome",
       brave: "com.brave.Browser",
       tauon: "com.github.taiko2k.tauonmb",
-      default: "sh.cider.Cider-symbolic",
+      default: "audio-x-generic-symbolic",
     },
   },
   color: {

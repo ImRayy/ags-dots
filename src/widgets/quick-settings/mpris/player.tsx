@@ -128,11 +128,11 @@ export default function Player({
   player,
   name,
 }: { name: string; player: Mpris.Player }) {
-  const title = bind(player, "title");
+  const title = bind(player, "title").as((title) => title || "");
   const playerIcon = bind(player, "entry").as((i) =>
     isIcon(i) ? i : icons.mpris.playerIcons.default,
   );
-  const artists = bind(player, "albumArtist");
+  const artists = bind(player, "albumArtist").as((artists) => artists || "");
 
   return (
     <box
@@ -149,7 +149,11 @@ export default function Player({
             <Title title={title} />
             <icon
               hexpand
-              css="font-size: 18px;"
+              css={bind(playerIcon).as((i) =>
+                i === icons.mpris.playerIcons.default
+                  ? "font-size: 14px;"
+                  : "font-size: 18px;",
+              )}
               halign={Gtk.Align.END}
               icon={playerIcon}
             />
