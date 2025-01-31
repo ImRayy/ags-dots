@@ -58,8 +58,10 @@ export default function OSD() {
     <window
       name="osd"
       layer={Astal.Layer.OVERLAY}
-      clickThrough
       anchor={Astal.WindowAnchor.RIGHT}
+      setup={(self) => {
+        self.clickThrough = true;
+      }}
     >
       <box className="osd-bar-container">
         <Progress visible={visible} />
