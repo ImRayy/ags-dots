@@ -4,7 +4,7 @@ import { Astal, Gtk } from "astal/gtk3";
 
 let startupVisibility = false;
 
-timeout(600, () => {
+timeout(1600, () => {
   startupVisibility = true;
 });
 

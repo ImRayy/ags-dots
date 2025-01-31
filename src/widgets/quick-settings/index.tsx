@@ -13,6 +13,7 @@ export default function QuickSettings() {
       name="quicksettings"
       css="background: transparent;"
       anchor={LEFT | TOP | BOTTOM}
+      margin={6}
       application={App}
     >
       <box
