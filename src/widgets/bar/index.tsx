@@ -13,8 +13,10 @@ import { CPU, Mem } from "./modules/sys-monitor";
 import SysTray from "./modules/systray";
 import Workspaces from "./modules/workspaces";
 
+const SPACING = 6;
+
 const LeftModules = (
-  <box spacing={8} hexpand halign={Gtk.Align.START}>
+  <box spacing={SPACING} hexpand halign={Gtk.Align.START}>
     <QSButton />
     <Workspaces />
     <CPU />
@@ -24,14 +26,14 @@ const LeftModules = (
 );
 
 const CenterModules = (
-  <box spacing={8}>
+  <box spacing={SPACING}>
     <Clock />
     <SysTray />
   </box>
 );
 
 const RightModules = (
-  <box spacing={8} hexpand halign={Gtk.Align.END}>
+  <box spacing={SPACING} hexpand halign={Gtk.Align.END}>
     <Mpris />
     <Network />
     <QuickAccessButton />

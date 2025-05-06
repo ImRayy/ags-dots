@@ -37,7 +37,7 @@ highlight {
 .qs-button {
   @include transition-color;
   all: unset;
-  color: $color01;
+  color: $text;
   background: $accent;
   padding: 0px 10px;
   border-radius: $rounded-md;
@@ -53,7 +53,7 @@ highlight {
 }
 
 .separator {
-  color: $color01;
+  color: $text;
   opacity: 0.2;
 }
 
@@ -67,14 +67,14 @@ highlight {
     padding-left: 0px;
     border-radius: 0px $rounded-md $rounded-md 0;
     background: $accent;
-    color: $color01;
+    color: $text;
   }
 
   .icon {
     border-radius: $rounded-md 0 0 $rounded-md;
     background: $accent;
     padding-left: 10px;
-    color: $color01;
+    color: $text;
   }
 }
 
@@ -83,7 +83,7 @@ highlight {
   all: unset;
   background: $accent;
   border-radius: $rounded-md;
-  color: $color01;
+  color: $text;
   padding: 0 10px;
 
   &:hover {
@@ -99,7 +99,7 @@ highlight {
 
   button {
     all: unset;
-    border: 2px solid $color02;
+    border: 2px solid $text;
     min-width: 10px;
     min-height: 10px;
     border-radius: 10rem;
@@ -129,7 +129,7 @@ highlight {
 
 
 .media button {
-  color: $color01;
+  color: $text;
   border-radius: $rounded-md;
   padding: 0 10px;
   background: $accent;
@@ -163,7 +163,7 @@ highlight {
 }
 
 .network-indicator {
-  color: $color01;
+  color: $text;
   border-radius: $rounded-md;
   background: $accent;
   padding: 0px 10px;
@@ -187,7 +187,7 @@ label {
 
   button {
     all: unset;
-    color: $color01;
+    color: $text;
 
     &:hover {
       color: $color03;
@@ -198,7 +198,7 @@ label {
 .notify-icon {
   all: unset;
   @include transition-color;
-  color: $color01;
+  color: $text;
   background: $accent;
   padding: 0 $rounded-md;
   border-radius: $rounded-md;

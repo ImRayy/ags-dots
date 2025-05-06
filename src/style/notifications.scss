@@ -2,14 +2,14 @@
 
 .notification {
   background-color: $base;
-  border: 2px solid $color01;
+  border: 2px solid $text;
   padding: 6px;
   margin-bottom: 6px;
   border-radius: $rounded-lg;
 
   separator {
     margin: 4px 0px;
-    background-color: transparentize($color01 , 0.8);
+    background-color: transparentize($text , 0.8);
   }
 
   .title {
@@ -47,10 +47,10 @@
 
   .action-buttons button {
     background: $color00;
-    color: $color01;
+    color: $text;
 
     &:hover {
-      background: $color01;
+      background: $text;
       color: $color00;
     }
   }
@@ -80,7 +80,7 @@ window#notifications {
 
 #notification-center {
   background-color: $base;
-  color: $color01;
+  color: $text;
   border: $border;
   border-radius: $rounded-lg;
 
@@ -90,7 +90,7 @@ window#notifications {
 
     label,
     image {
-      color: transparentize($color01, 0.6);
+      color: transparentize($text, 0.6);
     }
   }
 
@@ -109,7 +109,7 @@ window#notifications {
       background: $base;
 
       &:hover {
-        background: $color01;
+        background: $text;
         color: $color00
       }
     }
@@ -147,7 +147,7 @@ window#notifications {
 
     button {
       background-color: $color00;
-      color: $color01;
+      color: $text;
       border-radius: 1rem;
       padding: 6px;
       min-width: 20px;
@@ -156,6 +156,7 @@ window#notifications {
       &:hover {
         @include transition-color;
         background-color: $color03;
+        color: $base;
 
         image {
           color: $color00;

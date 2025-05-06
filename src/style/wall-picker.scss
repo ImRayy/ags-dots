@@ -19,7 +19,7 @@
   }
 
   .title {
-    color: $color01;
+    color: $text;
     font-size: 15px;
   }
 
@@ -52,10 +52,10 @@
 
     &.close-btn {
       background-color: $color00;
-      color: $color01;
+      color: $text;
 
       &:hover {
-        background-color: $color01 ;
+        background-color: $text ;
         color: $base;
       }
     }

@@ -5,7 +5,7 @@ trough {
 
   highlight,
   progress {
-    background-image: linear-gradient($color01, $color03);
+    background-image: linear-gradient($text, $color03);
     box-shadow: none;
     min-height: 6px;
     border: none;
@@ -21,7 +21,7 @@ slider {
   border: none;
 
   &:hover {
-    background-image: linear-gradient($color01, $color03);
+    background-image: linear-gradient($text, $color03);
     transition-duration: 100ms;
     transition: ease-in-out;
   }

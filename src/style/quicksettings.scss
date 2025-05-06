@@ -14,7 +14,7 @@
     }
 
     trough {
-      background-color: rgba($color01, 0.1);
+      background-color: rgba($text, 0.1);
     }
   }
 
@@ -24,7 +24,7 @@
       background-color: transparentize($color00, 0.3);
       min-height: 38px;
       min-width: 8rem;
-      color: $color01;
+      color: $text;
 
       &:hover {
         transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
@@ -57,7 +57,7 @@
     background: $bg-alt;
     border-radius: $border-radius;
     padding: 8px;
-    color: $color01;
+    color: $text;
 
     .icon {
       padding-right: 2px;
@@ -88,11 +88,11 @@
     .buttons-container {
       button {
         background: $color00;
-        color: $color01;
+        color: $text;
         min-height: 26px;
 
         &:hover {
-          background: transparentize($color01, 0.8);
+          background: transparentize($text, 0.8);
         }
       }
     }
@@ -105,11 +105,11 @@
       background: $color00;
       padding: 6px;
       border-radius: 6px;
-      color: $color01;
+      color: $text;
     }
 
     levelbar trough block.empty {
-      background: transparentize($color01, 0.8)
+      background: transparentize($text, 0.8)
     }
   }
 
@@ -125,7 +125,7 @@
 
   .date-widget {
     label {
-      color: $color01;
+      color: $text;
     }
 
     .separator {
@@ -135,7 +135,7 @@
 
   calendar {
     all: unset;
-    color: $color01;
+    color: $text;
     font-size: 14px;
     padding-top: 4px;
 
@@ -156,7 +156,7 @@
     }
 
     &:indeterminate {
-      color: transparentize($color01, 0.6);
+      color: transparentize($text, 0.6);
     }
   }
 }
