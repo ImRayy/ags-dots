@@ -22,9 +22,7 @@ const getMemInfo = (): MemInfo => {
   const match = mem.match(memRegex);
 
   if (!match)
-    throw new Error(
-      "Failed to obtain memory usage details from /proce/meminfo",
-    );
+    throw new Error("Failed to obtain memory usage details from /proc/meminfo");
 
   const total = Number.parseInt(match[1], 10);
   const available = Number.parseInt(match[2], 10);
